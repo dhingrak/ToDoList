@@ -29,7 +29,10 @@ After successful installation the server should log a similar message like below
 
 ## Usage
 The plugin can be tested by running an OTEL collector instance in Docker and configured any exporter such as Prometheus/Jaeger/Zipkin which can scrap the data from your Endpoint.
+```
+
 EventStoreDB --> OTLP exporter --> OTEL collector --> Choice of your exporter
+```
 
 ## Troubleshooting
 
