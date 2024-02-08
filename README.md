@@ -39,9 +39,9 @@ EventStoreDB --> OTLP exporter --> OTEL collector --> Choice of your exporter
 The plugin has to be located in a subdirectory of the server's `plugin` directory.
 To check this:
 1. Go to the installation directory of the server, the directory containing the EventStoreDb executable.
-1. In this directory there should be a directory called `plugins`, create it if this is not the case.
-1. The `plugins` directory should have a subdirectory for the plugin, for instance called `EventStore.OtlpExporterPlugin` but this could be any name. Create it if it doesn't exist.
-1. The binaries of the plugin should be located in the subdirectory which was checked in the previous step.
+2. In this directory there should be a directory called `plugins`, create it if this is not the case.
+3. The `plugins` directory should have a subdirectory for the plugin, for instance called `EventStore.OtlpExporterPlugin` but this could be any name. Create it if it doesn't exist.
+4. The binaries of the plugin should be located in the subdirectory which was checked in the previous step.
 
 ### EventStoreDB metrics not exported to OTEL collector endpoint
 Make sure the otlp-exporter.json file exists in your configuration folder and format is correct. The plugin will not be able to push the metrics if the configuration file is missing or the format is incorrect. In this case, the EventStoreDB logs the message like below to notify the user:-
