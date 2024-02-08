@@ -3,9 +3,18 @@ This plugin enables users to export EventStoreDB metrics via the OTLP exporter t
 To read more on the OTEL collector, please visit the following URL:-
 https://opentelemetry.io/docs/collector/
 
-To enable the OTLP Exporter, you will need to download the plugin and place it in the plugins folder in your EventStoreDB installation directory. EventStore should use it the next time it starts up. Additionally, you also need to provide the otlp-exporter.json file which should include the necessary information in the specified format:-
+To enable the OTLP Exporter, you will need to download the plugin and place it in the plugins folder in your EventStoreDB installation directory. EventStore should use it the next time it starts up.
+
+After successful installation the server should log a similar message like below:
 ```
-﻿{
+
+[ 9408, 1,12:47:10.982,INF] Loaded SubsystemsPlugin plugin: "otlp-exporter" "24.2.0.0".
+```
+
+Additionally, you also need to provide the otlp-exporter.json file which should include the necessary information in the specified format:-
+```
+
+{
 	"OpenTelemetry": {
 		"Otlp": {
 			"Endpoint": "http://localhost:4317"
@@ -14,17 +23,9 @@ To enable the OTLP Exporter, you will need to download the plugin and place it i
 }
 ```
 
-The file path for the otlp-exporter.json would be the same as for all the other configuration files. For example:-
+**Note**: Please ensure that the otlp-exporter.json file is placed inside a "config" folder within your EventStoreDB installation directory. If the "config" folder does not exist, please create it and paste the otlp-exporter.json file inside.
 
-The default configuration file name for EventStoreDB is eventstore.conf. It is located in /etc/eventstore/ on Linux and the server installation directory on Windows.
-
-After successful installation the server should log a similar message like below:
-```
-
-[ 9408, 1,12:47:10.982,INF] Loaded SubsystemsPlugin plugin: "otlp-exporter" "24.2.0.0".
-```
-
-By default, the OTLP exporter does not export the metrics. You must provide an otlp-exporter.json config file to enable this functionality. The following options can be used in the config file to override the default values of OtlpExporterOptions:-
+By default, the OTLP exporter does not export the metrics. You must provide an otlp-exporter.json config file to enable this functionality. The configuration file allows you to specify the following options for the OTLP exporter:-
 
 | Name     | Description                                                 |
 |----------|-------------------------------------------------------------|
