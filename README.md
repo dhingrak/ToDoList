@@ -26,10 +26,10 @@ After successful installation the server should log a similar message like below
 
 By default, the OTLP exporter does not export the metrics. You must provide an otlp-exporter.json config file to enable this functionality. The following options can be used in the config file to override the default values of OtlpExporterOptions:-
 
-| Name     | Description |
-|----------|---|
+| Name     | Description                                                 |
+|----------|-------------------------------------------------------------|
 | Endpoint | Target to which the OTLP exporter is going to send the data |
-| Headers  | Optional headers for the connection |
+| Headers  | Optional headers for the connection                         |
 
 
 ## Usage
