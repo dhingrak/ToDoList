@@ -1,4 +1,3 @@
-
 # OTLP Exporter Plugin
 This plugin allows you to push the EventStoreDB metrics to an OTEL collector endpoint. To read more on the OTEL collector, please visit the following URL:-
 https://opentelemetry.io/docs/collector/
@@ -36,7 +35,7 @@ EventStoreDB --> OTLP exporter --> OTEL collector --> Choice of your exporter
 
 ## Troubleshooting
 
-# Plugin not loaded
+### Plugin not loaded
 The plugin has to be located in a subdirectory of the server's `plugin` directory.
 To check this:
 1. Go to the installation directory of the server, the directory containing the EventStoreDb executable.
@@ -44,7 +43,7 @@ To check this:
 1. The `plugins` directory should have a subdirectory for the plugin, for instance called `EventStore.OtlpExporterPlugin` but this could be any name. Create it if it doesn't exist.
 1. The binaries of the plugin should be located in the subdirectory which was checked in the previous step.
 
-# EventStoreDB metrics not exported to OTEL collector endpoint
+### EventStoreDB metrics not exported to OTEL collector endpoint
 Make sure the otlp-exporter.json file exists in your configuration folder and format is correct. The plugin will not be able to push the metrics if the configuration file is missing or the format is incorrect. In this case, the EventStoreDB logs the message like below to notify the user:-
 ```
 [ 9408, 1,12:48:10.982,INF] OtlpExporter: No OpenTelemetry:Otlp configuration found. Not exporting metrics.
