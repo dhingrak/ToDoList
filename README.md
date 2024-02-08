@@ -26,8 +26,11 @@ After successful installation the server should log a similar message like below
 
 By default, the OTLP exporter does not export the metrics. You must provide an otlp-exporter.json config file to enable this functionality. The following options can be used in the config file to override the default values of OtlpExporterOptions:-
 
-`Endpoint`: Target to which the OTLP exporter is going to send the data.
-`Headers`: Optional headers for the connection.
+| Name     | Description |
+|----------|---|
+| Endpoint | Target to which the OTLP exporter is going to send the data |
+| Headers  | Optional headers for the connection |
+
 
 ## Usage
 The plugin can be tested by running an OTEL collector instance in Docker and configuring any exporter such as Prometheus/Jaeger/Zipkin which can scrape the data from your Endpoint.
