@@ -1,4 +1,3 @@
-
 # OTLP Exporter Plugin
 This plugin enables users to export EventStoreDB metrics via the Open Telemetry Protocol to a designated endpoint. The users have the flexibility to set up a collector endpoint as per their requirements. For example, the user can configure an OTEL collector to receive, process, and export metrics as desired.
 To read more on the OTEL collector, please visit the following URL:-
@@ -22,9 +21,9 @@ Additionally, you also need to provide the json configuration file which should 
 }
 ```
 
-**Note**: Ensure that the json configuration file needs to appear inside the "config" folder within your EventStoreDB installation directory. If the "config" folder does not exist, please create it and paste the otlp-exporter.json file inside.
+**Note**: Ensure that the json configuration file needs to appear inside the "config" folder within your EventStoreDB installation directory. If the "config" folder does not exist, please create it and paste the file inside.
 
-By default, the OTLP exporter does not export the metrics. You must provide an json configuration file to enable this functionality. The configuration file allows you to specify the following options for the OTLP exporter:-
+By default, the OTLP exporter does not export the metrics. You must provide a json configuration file to enable this functionality. The configuration file allows you to specify the following options for the OTLP exporter:-
 
 | Name     | Description                                                 |
 |----------|-------------------------------------------------------------|
@@ -60,7 +59,7 @@ To check this:
 4. The binaries of the plugin should be located in the subdirectory which was checked in the previous step.
 
 ### EventStoreDB metrics not exported to endpoint
-Make sure the otlp-exporter.json file exists in "config" folder with correct format. The plugin will not be able to push the metrics if the configuration file is missing or the format is incorrect. In this case, the EventStoreDB logs the message like below to notify the user:-
+Make sure the configuration file exists in "config" folder with correct format. The plugin will not be able to push the metrics if the configuration file is missing or the format is incorrect. In this case, the EventStoreDB logs the message like below to notify the user:-
 ```
 [ 9408, 1,12:48:10.982,INF] OtlpExporter: No OpenTelemetry:Otlp configuration found. Not exporting metrics.
 ```
