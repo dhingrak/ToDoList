@@ -10,18 +10,8 @@ After successful installation the server should log a similar message like below
 [ 9408, 1,12:47:10.982,INF] Loaded SubsystemsPlugin plugin: "otlp-exporter" "24.2.0.0".
 ```
 
-Additionally, you also need to provide the json configuration file which should include the necessary information in the specified format:-
-```
-{
-	"OpenTelemetry": {
-		"Otlp": {
-			"Endpoint": "http://localhost:4317"
-		}
-	}
-}
-```
-
-**Note**: Ensure that the json configuration file needs to appear inside the "config" folder within your EventStoreDB installation directory. If the "config" folder does not exist, please create it and paste the file inside.
+Additionally, you also need to provide the json configuration file. Please ensure that the json configuration file needs to appear inside the "config" folder within your EventStoreDB installation directory.
+If the "config" folder does not exist, please create it and paste the file inside.
 
 The configuration file allows you to specify the following option for the OTLP exporter:-
 
@@ -30,12 +20,24 @@ The configuration file allows you to specify the following option for the OTLP e
 | Endpoint | Target to which the OTLP exporter is going to send the data |
 | Headers  | Optional headers for the connection.                        |
 
-Headers is a key-value pair separated by commas. To provide custom headers, you can add the "Headers" option in the json configuration file and set the value according to your requirements:-
+Headers is a key-value pair separated by commas. To provide custom headers, you can add the "Headers" option in the json configuration file and set the value according to your requirements. For example:-
 ```
 "Headers": "api-key=value,other-config-value=value"
 ```
-
 In the above example, we are adding two custom key value pairs to the "Headers" option.
+
+## Configuration File Format
+Here is the template for the json configuration file:- 
+```
+{
+	"OpenTelemetry": {
+		"Otlp": {
+			"Endpoint": "http://localhost:4317",
+			"Headers": ""
+		}
+	}
+}
+```
 
 ## Usage
 The plugin can be tested by running an OTEL collector instance in Docker and configuring any monitoring tool such as Prometheus/Jaeger/Zipkin which can scrape the data from your Endpoint.
