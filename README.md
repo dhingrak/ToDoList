@@ -1,5 +1,5 @@
 # OTLP Exporter Plugin
-This plugin enables users to export EventStoreDB metrics via the OTLP exporter to a designated endpoint. The users have the flexibility to set up a collector endpoint as per their requirements. For example, the user can configure an OTEL collector to receive, process, and export metrics as desired.
+This plugin enables users to export EventStoreDB metrics via the Open Telemetry Protocol to a designated endpoint. The users have the flexibility to set up a collector endpoint as per their requirements. For example, the user can configure an OTEL collector to receive, process, and export metrics as desired.
 To read more on the OTEL collector, please visit the following URL:-
 https://opentelemetry.io/docs/collector/
 
@@ -7,13 +7,11 @@ To enable the OTLP Exporter, you will need to download the plugin and place it i
 
 After successful installation the server should log a similar message like below:
 ```
-
 [ 9408, 1,12:47:10.982,INF] Loaded SubsystemsPlugin plugin: "otlp-exporter" "24.2.0.0".
 ```
 
 Additionally, you also need to provide the otlp-exporter.json file which should include the necessary information in the specified format:-
 ```
-
 {
 	"OpenTelemetry": {
 		"Otlp": {
@@ -36,7 +34,6 @@ By default, the OTLP exporter does not export the metrics. You must provide an o
 ## Usage
 The plugin can be tested by running an OTEL collector instance in Docker and configuring any exporter such as Prometheus/Jaeger/Zipkin which can scrape the data from your Endpoint.
 ```
-
 EventStoreDB --> OTLP exporter --> OTEL collector --> Choice of your exporter
 ```
 
