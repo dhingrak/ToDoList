@@ -23,13 +23,19 @@ Additionally, you also need to provide the json configuration file which should 
 
 **Note**: Ensure that the json configuration file needs to appear inside the "config" folder within your EventStoreDB installation directory. If the "config" folder does not exist, please create it and paste the file inside.
 
-By default, the OTLP exporter does not export the metrics. You must provide a json configuration file to enable this functionality. The configuration file allows you to specify the following options for the OTLP exporter:-
+The configuration file allows you to specify the following option for the OTLP exporter:-
 
 | Name     | Description                                                 |
 |----------|-------------------------------------------------------------|
 | Endpoint | Target to which the OTLP exporter is going to send the data |
-| Headers  | Optional headers for the connection                         |
+| Headers  | Optional headers for the connection.                        |
 
+Headers is a key-value pair separated by commas. To provide custom headers, you can add the "Headers" option in the json configuration file and set the value according to your requirements:-
+```
+"Headers": "api-key=value,other-config-value=value"
+```
+
+In the above example, we are adding two custom key value pairs to the "Headers" option.
 
 ## Usage
 The plugin can be tested by running an OTEL collector instance in Docker and configuring any monitoring tool such as Prometheus/Jaeger/Zipkin which can scrape the data from your Endpoint.
